@@ -43,11 +43,6 @@ const Form = () => {
           value={email}
           onChange={onChangeEmail}
         />
-        {/*
-          Mediante el type nos aseguramos que
-          se dispare el evento onSubmit al hacer click
-          en el botón
-          */}
         <button type="submit">Enviar</button>
       </form>
     </div>
