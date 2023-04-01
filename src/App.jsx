@@ -10,6 +10,7 @@ import Home from "./Routes/Home";
 function App() {
   return (
       <div className="App">
+        
           <Navbar/>
         <Routes>
           <Route path="/home" element={<Home/>}/>

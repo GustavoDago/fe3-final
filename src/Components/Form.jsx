@@ -1,15 +1,23 @@
 import React from "react";
 import { useState } from "react";
 
-const onSubmitForm = (e) => {
-  e.preventDefault();
-  
-  // Por ahora solo mostramos el nombre del usuario
-  console.log('Nombre: ${userName}')
-  console.log('Email: ${email}')
-  }
-
 const Form = () => {
+  const onSubmitForm = (e) => {
+    e.preventDefault();
+    const usernameValido = validarUsername(userName)
+    const emailValido = validarEmail(email)
+    // Por ahora solo mostramos el nombre del usuario
+
+    if(!usernameValido || !emailValido) alert('**Por favor verifique su información nuevamente**')
+    else{
+      alert(`**Gracias ${userName}, te contactaremos cuanto antes vía mail**`)
+    console.log(`Nombre: ${userName}`)
+    console.log(`Email: ${email}`)
+    }
+  }
+  
+  const validarEmail = (email) => (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(email))
+  const validarUsername = (userName) => userName.length>5
   const [userName, setUserName] = useState("");
   const onChangeUserName = (e) => setUserName(e.target.value);
   const [email, setEmail] = useState("");
