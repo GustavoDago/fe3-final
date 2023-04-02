@@ -23,11 +23,10 @@ useEffect(() => {
 
   return (
     <main className="" >
-      <h1>Home</h1>
+      <h1>Bienvenidos</h1>
       <div className='card-grid'>
         {dentistas.map(dentista =>(<Link key={dentista.id} to={'/dentist/'+ dentista.id} >< Card name={dentista.name} username={dentista.username} id={dentista.id} /></Link>))}
-        {/* (<Link key={beer.id} to={'/beer/' + beer.id}><Card data={beer} />) */}
-        {/* Aqui deberias renderizar las cards */}
+
       </div>
     </main>
   )
