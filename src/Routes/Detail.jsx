@@ -9,17 +9,16 @@ const Detail = () => {
   const { id } = useParams()
   console.log(id)
 
-  const obtenerDentista = async()=>{
-
-      const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-      const data = await res.json()
-      console.log(data);
-      setDentista(data)
-  }
-
+  
   useEffect(()=>{
+    const obtenerDentista = async()=>{
+          const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+        const data = await res.json()
+        console.log(data);
+        setDentista(data)
+    }
       obtenerDentista()
-  }, [])
+  }, [id])
 
 
   return (
