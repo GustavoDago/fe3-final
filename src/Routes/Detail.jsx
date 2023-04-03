@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { useGlobalStates } from '../Components/utils/global.context'
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Detail = () => {
@@ -8,7 +9,7 @@ const Detail = () => {
   const [dentista, setDentista] = useState([])
   const { id } = useParams()
   console.log(id)
-
+  const {state, setState} =useGlobalStates
   
   useEffect(()=>{
     const obtenerDentista = async()=>{

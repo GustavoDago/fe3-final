@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useReducer } from "react";
 import imagenDentista from "./utils/doctor.jpg";
 import { Link } from "react-router-dom";
 
@@ -17,6 +17,7 @@ const Card = ({ name, username, id }) => {
     // Guardar el array actualizado en el localStorage
     localStorage.setItem("Destacados", JSON.stringify(updatedDestacados));
   };
+
 
 
   return (
