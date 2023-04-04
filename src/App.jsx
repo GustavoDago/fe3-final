@@ -6,11 +6,12 @@ import Contacto from "./Routes/Contact";
 import Detalle from "./Routes/Detail";
 import Destacados from "./Routes/Favs";
 import Home from "./Routes/Home";
-import { ContextGlobal } from "./Components/utils/global.context";
+import { ContextGlobal, useGlobalStates } from "./Components/utils/global.context";
 
 function App() {
+  const{activado} = useGlobalStates()
   return (
-    <div className="App">
+    <div className= {`App ${activado?'dark':""}`}>
 
       <Navbar />
       <Routes>

@@ -5,9 +5,9 @@ import { useGlobalStates } from '../Components/utils/global.context'
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Contact = () => {
-  const {state, setState} = useGlobalStates
+  const{activado} = useGlobalStates()
   return (
-    <div>
+    <div className={activado?'dark':""}>
       <h2>¿Quieres conocer más?</h2>
       <p>Envíanos tus datos y nos contactaremos contigo</p>
       <Form/>

@@ -1,7 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { useGlobalStates } from "./utils/global.context";
 
 const Form = () => {
+
+
+
   const onSubmitForm = (e) => {
     e.preventDefault();
     const usernameValido = validarUsername(userName)

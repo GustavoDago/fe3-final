@@ -2,9 +2,10 @@ import React from 'react'
 import { useGlobalStates } from './utils/global.context'
 
 const Footer = () => {
-  const {state, setState} =useGlobalStates()
+
+  const{activado} = useGlobalStates()
   return (
-    <footer>
+    <footer className={activado?'dark':""}>
         <p>Powered by</p>
         <img src="../images/DH.png" alt='DH-logo' />
     </footer>

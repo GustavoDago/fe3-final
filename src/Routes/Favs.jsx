@@ -5,7 +5,7 @@ import { useGlobalStates } from "../Components/utils/global.context";
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Favs = () => {
-  const {state, setState} =useGlobalStates
+  const{activado} = useGlobalStates()
   const destacadosGuardados = JSON.parse(localStorage.getItem("Destacados")) || [];
   return (
     <>

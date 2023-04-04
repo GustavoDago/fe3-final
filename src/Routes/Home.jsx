@@ -6,7 +6,7 @@ import { useGlobalStates } from "../Components/utils/global.context";
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const {state, setState} =useGlobalStates()
+  const{activado} = useGlobalStates()
 
 
   const [dentistas, setDentistas] = useState([]);
@@ -22,7 +22,7 @@ const Home = () => {
   });
 
   return (
-    <main className="">
+    <main className={activado?'dark':""}>
       <h1>Bienvenidos</h1>
       <div className="card-grid">
         {dentistas.map((dentista) => (
