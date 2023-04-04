@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { useGlobalStates } from "./utils/global.context";
 
 const Form = () => {
 
@@ -8,10 +7,12 @@ const Form = () => {
 
   const onSubmitForm = (e) => {
     e.preventDefault();
+
+    //inicializo las validaciones
     const usernameValido = validarUsername(userName)
     const emailValido = validarEmail(email)
-    // Por ahora solo mostramos el nombre del usuario
 
+    //validaciones
     if(!usernameValido || !emailValido) alert('**Por favor verifique su información nuevamente**')
     else{
       alert(`**Gracias ${userName}, te contactaremos cuanto antes vía mail**`)
@@ -19,22 +20,20 @@ const Form = () => {
     console.log(`Email: ${email}`)
     }
   }
-  
+  //valido el email
   const validarEmail = (email) => (/^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/.test(email))
+  //valido el nombre
   const validarUsername = (userName) => userName.length>5
+  //seteos del nombre
   const [userName, setUserName] = useState("");
   const onChangeUserName = (e) => setUserName(e.target.value);
+  //seteos del email
   const [email, setEmail] = useState("");
   const onChangeEmail = (e) => setEmail(e.target.value);
   //Aqui deberan implementar el form completo con sus validaciones
   return (
     <div>
       <form onSubmit={onSubmitForm}>
-        {/*
-          Creamos dos inputs controlados
-          pasando el estado como value y el manejador
-          al evento onChange
-          */}
         <input
           type="text"
           placeholder="Nombre de usuario"

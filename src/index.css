@@ -117,7 +117,7 @@ tr:nth-child(even) {
 }
 
 .dark{
-  background-color: #12121296;
+  background-color: #2c0e0e96;
   color: white;
 }
 .dark > a {

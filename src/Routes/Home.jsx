@@ -1,29 +1,18 @@
 import React from "react";
 import Card from "../Components/Card";
-import { useState, useEffect } from "react";
 import { useGlobalStates } from "../Components/utils/global.context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
 const Home = () => {
-  const{activado} = useGlobalStates()
-
-
-  const [dentistas, setDentistas] = useState([]);
-
-  const getData = async () => {
-    const data = await fetch(`https://jsonplaceholder.typicode.com/users`);
-    const convert = await data.json();
-    setDentistas(convert);
-  };
-
-  useEffect(() => {
-    getData();
-  });
+  //traigo los datos que necesito del context
+  const {activado, dentistas} = useGlobalStates()
 
   return (
+    //implemento el cambio de tema
     <main className={activado?'dark':""}>
       <h1>Bienvenidos</h1>
+        {/* renderizo las cards */}
       <div className="card-grid">
         {dentistas.map((dentista) => (
             <Card key={dentista.id}

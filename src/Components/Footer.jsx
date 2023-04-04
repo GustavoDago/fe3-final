@@ -5,6 +5,7 @@ const Footer = () => {
 
   const{activado} = useGlobalStates()
   return (
+    //implemento el cambio de tema
     <footer className={activado?'dark':""}>
         <p>Powered by</p>
         <img src="../images/DH.png" alt='DH-logo' />
