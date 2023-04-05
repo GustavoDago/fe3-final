@@ -4,20 +4,10 @@ import { Link } from "react-router-dom";
 import { useGlobalStates } from './utils/global.context'
 
 const Card = ({ name, username, id }) => {
-  const{activado} = useGlobalStates()
+  const{activado, destacadosDispatch} = useGlobalStates()
 
   const addFav = () => {
-    // Obtengo los datos actuales del localStorage
-    const destacadosGuardados = JSON.parse(localStorage.getItem("Destacados")) || [];
-
-    // Creo un nuevo objeto con los datos actuales
-    const nuevoDestacado = { name, username, id };
-
-    // Agrego el nuevo objeto al array
-    const updatedDestacados = [...destacadosGuardados, nuevoDestacado];
-
-    // Guardo el array actualizado en el localStorage
-    localStorage.setItem("Destacados", JSON.stringify(updatedDestacados));
+    destacadosDispatch({type:'ADD_DEST', payload:{ name, username, id }})
   };
   
   return (

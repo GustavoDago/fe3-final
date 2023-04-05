@@ -15,7 +15,7 @@ const Navbar = () => {
       <Link to="/favs">Destacados</Link>
       <button className={activado?'dark':""}
       onClick={cambiarTheme}
-      >Cambiar Tema</button>
+      >{activado ? '☀': '🌛' }</button>
     </nav>
   )
 }
