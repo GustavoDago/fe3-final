@@ -19,7 +19,7 @@ const Navbar = () => {
       <Link to="/favs">Destacados</Link>
       <button className={activado?'dark':""}
       onClick={cambiarTheme}
-      >{activado ? '☀': '🌛' }</button>
+      >{activado ? '😎': '🌛' }</button>
     </nav>
   )
 }

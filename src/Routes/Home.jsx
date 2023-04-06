@@ -10,10 +10,10 @@ const Home = () => {
 
   return (
     //implemento el cambio de tema
-    <main className={activado?'dark':""}>
-      <h1>Bienvenidos</h1>
+    <main >
+      <h1 className={activado?'dark':""}>Bienvenidos</h1>
         {/* renderizo las cards */}
-      <div className="card-grid">
+      <div className={`card-grid ${activado?'dark':""}`}>
         {dentistas.map((dentista) => (
             <Card key={dentista.id}
               name={dentista.name}

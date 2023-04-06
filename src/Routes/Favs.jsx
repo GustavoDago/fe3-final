@@ -6,12 +6,13 @@ import { useGlobalStates } from "../Components/utils/global.context";
 
 const Favs = () => {
 
-  const destacadosGuardados = JSON.parse(localStorage.getItem("Destacados")) || [];
+  const {destacadosState} = useGlobalStates()
+  console.log(JSON.stringify(destacadosState));
   return (
     <>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
-        {destacadosGuardados.map((dentista) => (
+        {destacadosState.map((dentista) => (
             <Card key={dentista.id}
               name={dentista.name}
               username={dentista.username}
