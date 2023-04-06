@@ -5,7 +5,11 @@ import { useGlobalStates } from './utils/global.context'
 
 const Navbar = () => {
   //traigo los datos que necesito del context
-  const{activado, cambiarTheme} = useGlobalStates()
+  const{activado, themeDispatch} = useGlobalStates()
+  const cambiarTheme = ()=> {
+    if(activado) themeDispatch({type: 'SWITCH_LIGHT'})
+    else themeDispatch({type: 'SWITCH_DARK'})
+  }
   return (
     //aplico el cambio de tema
     <nav className={activado?'dark':""} >
